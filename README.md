@@ -12,6 +12,9 @@ An intelligent job search system that uses an MCP (Model Context Protocol) serve
 - **RESTful API**: Programmatic access to job search functionality
 - **Custom Model Training**: Train your own specialized job search model
 
+
+![](./assets/joblessAI.png)
+
 ## 🚀 Quick Start
 
 ### 1. Install Dependencies
