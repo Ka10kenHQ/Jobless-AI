@@ -1,0 +1,114 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Machine Learning / AI
+cache/
+*.pt
+*.pth
+*.ckpt
+wandb/
+runs/
+outputs/
+lightning_logs/
+
+# Large model files
+models/*/pytorch_model.bin
+models/*/model.safetensors
+models/*/adapter_model.safetensors
+models/*/*.pt
+models/*/*.pth
+
+# Datasets (keep structure but not large files)
+data/*/data-*.arrow
+data/*/*.arrow
+*.parquet
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Node modules (if any frontend)
+node_modules/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Docker
+.docker/
+
+# System files
+*.pid
+*.seed
+*.pid.lock 

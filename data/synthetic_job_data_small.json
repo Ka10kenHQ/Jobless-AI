@@ -1,0 +1,1390 @@
+[
+  {
+    "user_message": "I want to add machine learning to my skill requirements",
+    "extracted_requirements": {},
+    "response": "I've refined your search criteria. Here are the updated results.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "This is exactly what I was looking for",
+    "extracted_requirements": {},
+    "response": "I'm glad these opportunities match what you're looking for! The matching algorithm considers your skills, experience, and location preferences.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "Can you find jobs at larger companies?",
+    "extracted_requirements": {},
+    "response": "I'll search for additional opportunities that match your criteria.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "Is this DevOps Engineer position at Smart Corp in Bangalore a good match for me?",
+    "extracted_requirements": {
+      "keywords": "devops engineer",
+      "location": "Bangalore",
+      "experience_level": "any",
+      "job_type": "any",
+      "skills": [
+        "TensorFlow",
+        "Figma",
+        "Terraform"
+      ],
+      "company_type": "any"
+    },
+    "response": "This DevOps Engineer position at Smart Corp looks like a 66% match based on your requirements. The location matches your preference for Bangalore.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm searching for a Machine Learning Engineer role with 7+ years experience",
+    "extracted_requirements": {
+      "keywords": "machine learning engineer",
+      "location": "Singapore",
+      "experience_level": "mid-level",
+      "job_type": "remote",
+      "skills": [
+        "C++",
+        "Go",
+        "Django",
+        "Node.js"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find Machine Learning Engineer positions. Let me search for mid-level roles in Singapore.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "Is this UX Designer position at Digital Inc in Rustavi a good match for me?",
+    "extracted_requirements": {
+      "keywords": "ux designer",
+      "location": "Rustavi",
+      "experience_level": "any",
+      "job_type": "any",
+      "skills": [
+        "C++",
+        "JavaScript",
+        "Vue.js"
+      ],
+      "company_type": "any"
+    },
+    "response": "This UX Designer position at Digital Inc looks like a 81% match based on your requirements. The location matches your preference for Rustavi.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "Is this Database Administrator position at Tech Inc in Los Angeles a good match for me?",
+    "extracted_requirements": {
+      "keywords": "database administrator",
+      "location": "Los Angeles",
+      "experience_level": "any",
+      "job_type": "any",
+      "skills": [
+        "Django",
+        "Vue.js",
+        "Git"
+      ],
+      "company_type": "any"
+    },
+    "response": "This Database Administrator position at Tech Inc looks like a 73% match based on your requirements. The location matches your preference for Los Angeles.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "Is this Data Analyst position at Innovation Corp in Paris a good match for me?",
+    "extracted_requirements": {
+      "keywords": "data analyst",
+      "location": "Paris",
+      "experience_level": "any",
+      "job_type": "any",
+      "skills": [
+        "Go",
+        "JavaScript",
+        "MongoDB"
+      ],
+      "company_type": "any"
+    },
+    "response": "This Data Analyst position at Innovation Corp looks like a 76% match based on your requirements. The location matches your preference for Paris.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I want to add machine learning to my skill requirements",
+    "extracted_requirements": {},
+    "response": "I've refined your search criteria. Here are the updated results.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "Find me Full Stack Developer jobs in Tbilisi with C++, JavaScript experience",
+    "extracted_requirements": {
+      "keywords": "full stack developer",
+      "location": "Tbilisi",
+      "experience_level": "mid-level",
+      "job_type": "contract",
+      "skills": [
+        "C++",
+        "JavaScript",
+        "Vue.js",
+        "Angular"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find Full Stack Developer positions. Let me search for mid-level roles in Tbilisi.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "Looking for junior Solutions Architect opportunities in Amsterdam",
+    "extracted_requirements": {
+      "keywords": "solutions architect",
+      "location": "Amsterdam",
+      "experience_level": "junior",
+      "job_type": "remote",
+      "skills": [
+        "Go",
+        "Rust",
+        "React",
+        "Node.js"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find Solutions Architect positions. Let me search for junior roles in Amsterdam.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "Is this Software Engineer position at Future Systems in Tel Aviv a good match for me?",
+    "extracted_requirements": {
+      "keywords": "software engineer",
+      "location": "Tel Aviv",
+      "experience_level": "any",
+      "job_type": "any",
+      "skills": [
+        "Docker",
+        "Azure",
+        "PostgreSQL"
+      ],
+      "company_type": "any"
+    },
+    "response": "This Software Engineer position at Future Systems looks like a 71% match based on your requirements. The location matches your preference for Tel Aviv.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I need a Product Manager position that involves Jira, Photoshop and development",
+    "extracted_requirements": {
+      "keywords": "product manager",
+      "location": "Kaspi",
+      "experience_level": "mid-level",
+      "job_type": "part-time",
+      "skills": [
+        "Jira",
+        "Photoshop"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find Product Manager positions. Let me search for mid-level roles in Kaspi.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "Is this Full Stack Developer position at Tech Systems in Berlin a good match for me?",
+    "extracted_requirements": {
+      "keywords": "full stack developer",
+      "location": "Berlin",
+      "experience_level": "any",
+      "job_type": "any",
+      "skills": [
+        "AWS",
+        "PostgreSQL",
+        "Go"
+      ],
+      "company_type": "any"
+    },
+    "response": "This Full Stack Developer position at Tech Systems looks like a 79% match based on your requirements. The location matches your preference for Berlin.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I want a full-time Frontend Developer role focusing on Node.js, Angular",
+    "extracted_requirements": {
+      "keywords": "frontend developer",
+      "location": "San Francisco",
+      "experience_level": "entry-level",
+      "job_type": "full-time",
+      "skills": [
+        "Node.js",
+        "Angular",
+        "SQL",
+        "Pandas"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find Frontend Developer positions. Let me search for entry-level roles in San Francisco.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "Find me DevOps Engineer jobs in Kutaisi with Angular, Django experience",
+    "extracted_requirements": {
+      "keywords": "devops engineer",
+      "location": "Kutaisi",
+      "experience_level": "entry-level",
+      "job_type": "part-time",
+      "skills": [
+        "Angular",
+        "Django",
+        "NumPy",
+        "PostgreSQL"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find DevOps Engineer positions. Let me search for entry-level roles in Kutaisi.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "Please exclude positions that require 10+ years experience",
+    "extracted_requirements": {},
+    "response": "I've refined your search criteria. Here are the updated results.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "Can you help me find hybrid Product Manager jobs in Batumi?",
+    "extracted_requirements": {
+      "keywords": "product manager",
+      "location": "Batumi",
+      "experience_level": "senior",
+      "job_type": "hybrid",
+      "skills": [
+        "Java",
+        "Go",
+        "Flask",
+        "Node.js"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find Product Manager positions. Let me search for senior roles in Batumi.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "I'm searching for a Engineering Manager role with 5+ years experience",
+    "extracted_requirements": {
+      "keywords": "engineering manager",
+      "location": "Sydney",
+      "experience_level": "lead",
+      "job_type": "part-time",
+      "skills": [
+        "JavaScript",
+        "Rust",
+        "Node.js",
+        "Express"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find Engineering Manager positions. Let me search for lead roles in Sydney.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "Are there any remote options?",
+    "extracted_requirements": {},
+    "response": "I'll search for additional opportunities that match your criteria.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "Find me Data Scientist jobs in Austin with Express, Vue.js experience",
+    "extracted_requirements": {
+      "keywords": "data scientist",
+      "location": "Austin",
+      "experience_level": "lead",
+      "job_type": "full-time",
+      "skills": [
+        "Express",
+        "Vue.js",
+        "PyTorch",
+        "TensorFlow"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find Data Scientist positions. Let me search for lead roles in Austin.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "Actually, I'm open to contract positions too",
+    "extracted_requirements": {},
+    "response": "I've updated your preferences. Let me search again with the new criteria.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "I'd like to focus on senior-level roles only",
+    "extracted_requirements": {},
+    "response": "I've updated your preferences. Let me search again with the new criteria.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "I want to add machine learning to my skill requirements",
+    "extracted_requirements": {},
+    "response": "I've refined your search criteria. Here are the updated results.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "I'm searching for a Software Engineer role with 2-3 years experience",
+    "extracted_requirements": {
+      "keywords": "software engineer",
+      "location": "Rustavi",
+      "experience_level": "junior",
+      "job_type": "hybrid",
+      "skills": [
+        "TypeScript",
+        "Java",
+        "Flask",
+        "Vue.js"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find Software Engineer positions. Let me search for junior roles in Rustavi.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "I'm also interested in startup companies",
+    "extracted_requirements": {},
+    "response": "I've refined your search criteria. Here are the updated results.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "Is this Machine Learning Engineer position at Tech Labs in Rustavi a good match for me?",
+    "extracted_requirements": {
+      "keywords": "machine learning engineer",
+      "location": "Rustavi",
+      "experience_level": "any",
+      "job_type": "any",
+      "skills": [
+        "NumPy",
+        "SQL",
+        "Python"
+      ],
+      "company_type": "any"
+    },
+    "response": "This Machine Learning Engineer position at Tech Labs looks like a 78% match based on your requirements. The location matches your preference for Rustavi.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'd like to focus on senior-level roles only",
+    "extracted_requirements": {},
+    "response": "I've updated your preferences. Let me search again with the new criteria.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "I'm also interested in startup companies",
+    "extracted_requirements": {},
+    "response": "I've refined your search criteria. Here are the updated results.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "I want to add machine learning to my skill requirements",
+    "extracted_requirements": {},
+    "response": "I've refined your search criteria. Here are the updated results.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "Looking for junior Machine Learning Engineer opportunities in Kutaisi",
+    "extracted_requirements": {
+      "keywords": "machine learning engineer",
+      "location": "Kutaisi",
+      "experience_level": "junior",
+      "job_type": "hybrid",
+      "skills": [
+        "Go",
+        "C++",
+        "Vue.js",
+        "Node.js"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find Machine Learning Engineer positions. Let me search for junior roles in Kutaisi.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "Is this UX Designer position at Innovation Solutions in Bangalore a good match for me?",
+    "extracted_requirements": {
+      "keywords": "ux designer",
+      "location": "Bangalore",
+      "experience_level": "any",
+      "job_type": "any",
+      "skills": [
+        "Kubernetes",
+        "Sketch",
+        "Terraform"
+      ],
+      "company_type": "any"
+    },
+    "response": "This UX Designer position at Innovation Solutions looks like a 60% match based on your requirements. The location matches your preference for Bangalore.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm searching for a Security Engineer role with 5+ years experience",
+    "extracted_requirements": {
+      "keywords": "security engineer",
+      "location": "Batumi",
+      "experience_level": "mid-level",
+      "job_type": "full-time",
+      "skills": [
+        "Django",
+        "React",
+        "Pandas",
+        "MongoDB"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find Security Engineer positions. Let me search for mid-level roles in Batumi.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "Is this UX Designer position at Future Corp in Seattle a good match for me?",
+    "extracted_requirements": {
+      "keywords": "ux designer",
+      "location": "Seattle",
+      "experience_level": "any",
+      "job_type": "any",
+      "skills": [
+        "TypeScript",
+        "Flask",
+        "Express"
+      ],
+      "company_type": "any"
+    },
+    "response": "This UX Designer position at Future Corp looks like a 78% match based on your requirements. The location matches your preference for Seattle.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "Is this UX Designer position at Innovation Corp in Sydney a good match for me?",
+    "extracted_requirements": {
+      "keywords": "ux designer",
+      "location": "Sydney",
+      "experience_level": "any",
+      "job_type": "any",
+      "skills": [
+        "GCP",
+        "Flask",
+        "Vue.js"
+      ],
+      "company_type": "any"
+    },
+    "response": "This UX Designer position at Innovation Corp looks like a 65% match based on your requirements. The location matches your preference for Sydney.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I prefer remote work, can you update the search?",
+    "extracted_requirements": {},
+    "response": "I've updated your preferences. Let me search again with the new criteria.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "Are there any remote options?",
+    "extracted_requirements": {},
+    "response": "I'll search for additional opportunities that match your criteria.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "Is this Data Scientist position at Tech Corp in Chicago a good match for me?",
+    "extracted_requirements": {
+      "keywords": "data scientist",
+      "location": "Chicago",
+      "experience_level": "any",
+      "job_type": "any",
+      "skills": [
+        "Docker",
+        "Flask",
+        "TypeScript"
+      ],
+      "company_type": "any"
+    },
+    "response": "This Data Scientist position at Tech Corp looks like a 79% match based on your requirements. The location matches your preference for Chicago.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "Can you find jobs at larger companies?",
+    "extracted_requirements": {},
+    "response": "I'll search for additional opportunities that match your criteria.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "Please exclude positions that require 10+ years experience",
+    "extracted_requirements": {},
+    "response": "I've refined your search criteria. Here are the updated results.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "I need a Machine Learning Engineer position that involves C++, JavaScript and development",
+    "extracted_requirements": {
+      "keywords": "machine learning engineer",
+      "location": "Tbilisi",
+      "experience_level": "entry-level",
+      "job_type": "contract",
+      "skills": [
+        "C++",
+        "JavaScript"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find Machine Learning Engineer positions. Let me search for entry-level roles in Tbilisi.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "These matches look great, thank you!",
+    "extracted_requirements": {},
+    "response": "I'm glad these opportunities match what you're looking for! The matching algorithm considers your skills, experience, and location preferences.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "I need a Solutions Architect position that involves Flask, Angular and Jenkins, Git",
+    "extracted_requirements": {
+      "keywords": "solutions architect",
+      "location": "Singapore",
+      "experience_level": "junior",
+      "job_type": "hybrid",
+      "skills": [
+        "Flask",
+        "Angular",
+        "Jenkins",
+        "Git"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find Solutions Architect positions. Let me search for junior roles in Singapore.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "Can you focus on companies with good work-life balance?",
+    "extracted_requirements": {},
+    "response": "I've refined your search criteria. Here are the updated results.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "Looking for junior Security Engineer opportunities in Kaspi",
+    "extracted_requirements": {
+      "keywords": "security engineer",
+      "location": "Kaspi",
+      "experience_level": "junior",
+      "job_type": "remote",
+      "skills": [
+        "Python",
+        "JavaScript",
+        "Docker",
+        "GCP"
+      ],
+      "company_type": "any"
+    },
+    "response": "I'll help you find Security Engineer positions. Let me search for junior roles in Kaspi.",
+    "task_type": "requirement_extraction"
+  },
+  {
+    "user_message": "Is this UX Designer position at Smart Corp in Tbilisi a good match for me?",
+    "extracted_requirements": {
+      "keywords": "ux designer",
+      "location": "Tbilisi",
+      "experience_level": "any",
+      "job_type": "any",
+      "skills": [
+        "Rust",
+        "Photoshop",
+        "TensorFlow"
+      ],
+      "company_type": "any"
+    },
+    "response": "This UX Designer position at Smart Corp looks like a 74% match based on your requirements. The location matches your preference for Tbilisi.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "Actually, I'm open to contract positions too",
+    "extracted_requirements": {},
+    "response": "I've updated your preferences. Let me search again with the new criteria.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "Can you show me more details about the first job?",
+    "extracted_requirements": {},
+    "response": "I'll search for additional opportunities that match your criteria.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "Please exclude positions that require 10+ years experience",
+    "extracted_requirements": {},
+    "response": "I've refined your search criteria. Here are the updated results.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "Actually, I'm open to contract positions too",
+    "extracted_requirements": {},
+    "response": "I've updated your preferences. Let me search again with the new criteria.",
+    "task_type": "conversation"
+  },
+  {
+    "user_message": "I'm looking for a Software Engineer, Frontend position similar to the one at Wealthfront",
+    "extracted_requirements": {
+      "keywords": "software engineer, frontend",
+      "location": "New York, NY",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Software Engineer, Frontend position at Wealthfront in New York, NY that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Software Engineer, Frontend position similar to the one at Arc",
+    "extracted_requirements": {
+      "keywords": "software engineer, frontend",
+      "location": "San Francisco Bay Area",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Software Engineer, Frontend position at Arc in San Francisco Bay Area that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Software Engineer, Chat position similar to the one at SoFi",
+    "extracted_requirements": {
+      "keywords": "software engineer, chat",
+      "location": "San Francisco, CA",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Software Engineer, Chat position at SoFi in San Francisco, CA that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ******** ******** - *** position similar to the one at ******* *******",
+    "extracted_requirements": {
+      "keywords": "******** ******** - ***",
+      "location": "*** *****, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ******** ******** - *** position at ******* ******* in *** *****, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ******** ******** position similar to the one at *******",
+    "extracted_requirements": {
+      "keywords": "******** ********",
+      "location": "*********, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ******** ******** position at ******* in *********, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ******** *********** ******** * **** position similar to the one at ******",
+    "extracted_requirements": {
+      "keywords": "******** *********** ******** * ****",
+      "location": "**** **** ****, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ******** *********** ******** * **** position at ****** in **** **** ****, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ******** ******** * - ** & *** ****** ******** position similar to the one at *******",
+    "extracted_requirements": {
+      "keywords": "******** ******** * - ** & *** ****** ********",
+      "location": "*** *****, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ******** ******** * - ** & *** ****** ******** position at ******* in *** *****, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Data Scientist - Pricing position similar to the one at Petco",
+    "extracted_requirements": {
+      "keywords": "data scientist - pricing",
+      "location": "United States",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Data Scientist - Pricing position at Petco in United States that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Data Scientist position similar to the one at L.E.K. Consulting",
+    "extracted_requirements": {
+      "keywords": "data scientist",
+      "location": "New York, United States",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Data Scientist position at L.E.K. Consulting in New York, United States that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Data Scientist position similar to the one at ALTA IT Services, LLC",
+    "extracted_requirements": {
+      "keywords": "data scientist",
+      "location": "Washington, DC",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Data Scientist position at ALTA IT Services, LLC in Washington, DC that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a **** *********, ********* - ***** & ****** - *** **** position similar to the one at ******",
+    "extracted_requirements": {
+      "keywords": "**** *********, ********* - ***** & ****** - *** ****",
+      "location": "*** ****, ****** ******",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a **** *********, ********* - ***** & ****** - *** **** position at ****** in *** ****, ****** ****** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a **** ********* position similar to the one at *.*.*. **********",
+    "extracted_requirements": {
+      "keywords": "**** *********",
+      "location": "*******, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a **** ********* position at *.*.*. ********** in *******, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a **** ********* position similar to the one at ********* **********",
+    "extracted_requirements": {
+      "keywords": "**** *********",
+      "location": "*********, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a **** ********* position at ********* ********** in *********, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Product Manager I, YouTube Shorts position similar to the one at Google",
+    "extracted_requirements": {
+      "keywords": "product manager i, youtube shorts",
+      "location": "Mountain View, CA",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Product Manager I, YouTube Shorts position at Google in Mountain View, CA that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Product Manager position similar to the one at Jack",
+    "extracted_requirements": {
+      "keywords": "product manager",
+      "location": "United States",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Product Manager position at Jack in United States that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Product Manager I, Chrome Mobile Search position similar to the one at Google",
+    "extracted_requirements": {
+      "keywords": "product manager i, chrome mobile search",
+      "location": "Los Angeles, CA",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Product Manager I, Chrome Mobile Search position at Google in Los Angeles, CA that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ******* ******* position similar to the one at ***********",
+    "extracted_requirements": {
+      "keywords": "******* *******",
+      "location": "****** ******",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ******* ******* position at *********** in ****** ****** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ******* ************ - ********* ******* ******* position similar to the one at ******",
+    "extracted_requirements": {
+      "keywords": "******* ************ - ********* ******* *******",
+      "location": "*** ****, ****** ******",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ******* ************ - ********* ******* ******* position at ****** in *** ****, ****** ****** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ******* ******* position similar to the one at *********",
+    "extracted_requirements": {
+      "keywords": "******* *******",
+      "location": "******, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ******* ******* position at ********* in ******, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ****** ******* *******, *** ************* position similar to the one at *******",
+    "extracted_requirements": {
+      "keywords": "****** ******* *******, *** *************",
+      "location": "******, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ****** ******* *******, *** ************* position at ******* in ******, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a User Experience Designer, Google Ads, Early Career position similar to the one at Google",
+    "extracted_requirements": {
+      "keywords": "user experience designer, google ads, early career",
+      "location": "Seattle, WA",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a User Experience Designer, Google Ads, Early Career position at Google in Seattle, WA that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Graduate UX Researcher position similar to the one at Lensa",
+    "extracted_requirements": {
+      "keywords": "graduate ux researcher",
+      "location": "Atlanta, GA",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Graduate UX Researcher position at Lensa in Atlanta, GA that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Interaction Designer,  YouTube ACE GenAI position similar to the one at Google",
+    "extracted_requirements": {
+      "keywords": "interaction designer,  youtube ace genai",
+      "location": "Mountain View, CA",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Interaction Designer,  YouTube ACE GenAI position at Google in Mountain View, CA that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a **. ** ******** (******) position similar to the one at *********",
+    "extracted_requirements": {
+      "keywords": "**. ** ******** (******)",
+      "location": "*****, ****** ******",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a **. ** ******** (******) position at ********* in *****, ****** ****** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a **** ********** ******** position similar to the one at ******* ********",
+    "extracted_requirements": {
+      "keywords": "**** ********** ********",
+      "location": "********, **** ************ ****",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a **** ********** ******** position at ******* ******** in ********, **** ************ **** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a **. ** ******** ( {{****}}) position similar to the one at *********",
+    "extracted_requirements": {
+      "keywords": "**. ** ******** ( {{****}})",
+      "location": "*****, ****** ******",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a **. ** ******** ( {{****}}) position at ********* in *****, ****** ****** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a **/** ******** position similar to the one at ****** *********, ***.",
+    "extracted_requirements": {
+      "keywords": "**/** ********",
+      "location": "*****, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a **/** ******** position at ****** *********, ***. in *****, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Junior DevOps/Release Engineer position similar to the one at Largeton Group",
+    "extracted_requirements": {
+      "keywords": "junior devops/release engineer",
+      "location": "Rockville, MD",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Junior DevOps/Release Engineer position at Largeton Group in Rockville, MD that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Junior DevOps Engineer position similar to the one at GliaCell Technologies",
+    "extracted_requirements": {
+      "keywords": "junior devops engineer",
+      "location": "Hanover, MD",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Junior DevOps Engineer position at GliaCell Technologies in Hanover, MD that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a DevOps Engineer position similar to the one at IT Minds LLC",
+    "extracted_requirements": {
+      "keywords": "devops engineer",
+      "location": "San Antonio, TX",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a DevOps Engineer position at IT Minds LLC in San Antonio, TX that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a *** ***** ******** position similar to the one at *********",
+    "extracted_requirements": {
+      "keywords": "*** ***** ********",
+      "location": "*********, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a *** ***** ******** position at ********* in *********, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ***** ****** ******** position similar to the one at ******* ************** : ****** ********* *********",
+    "extracted_requirements": {
+      "keywords": "***** ****** ********",
+      "location": "*******, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ***** ****** ******** position at ******* ************** : ****** ********* ********* in *******, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ****** ******** position similar to the one at ******* ***",
+    "extracted_requirements": {
+      "keywords": "****** ********",
+      "location": "************, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ****** ******** position at ******* *** in ************, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a *****/****** ******** position similar to the one at ********* *****",
+    "extracted_requirements": {
+      "keywords": "*****/****** ********",
+      "location": "*******, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a *****/****** ******** position at ********* ***** in *******, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Early Career Machine Learning Engineer position similar to the one at NFX",
+    "extracted_requirements": {
+      "keywords": "early career machine learning engineer",
+      "location": "San Francisco Bay Area",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Early Career Machine Learning Engineer position at NFX in San Francisco Bay Area that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a (General Hire) Machine Learning Engineer Graduate (Advertisement Team) - 2025 Start (BS/MS\uff09 position similar to the one at TikTok",
+    "extracted_requirements": {
+      "keywords": "(general hire) machine learning engineer graduate (advertisement team) - 2025 start (bs/ms\uff09",
+      "location": "San Jose, CA",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a (General Hire) Machine Learning Engineer Graduate (Advertisement Team) - 2025 Start (BS/MS\uff09 position at TikTok in San Jose, CA that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Data Scientist position similar to the one at Princeton Pharmatech",
+    "extracted_requirements": {
+      "keywords": "data scientist",
+      "location": "Princeton, NJ",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Data Scientist position at Princeton Pharmatech in Princeton, NJ that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a **/******* ******** ******** position similar to the one at *******",
+    "extracted_requirements": {
+      "keywords": "**/******* ******** ********",
+      "location": "****** ******",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a **/******* ******** ******** position at ******* in ****** ****** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ******* ******** ******** position similar to the one at *******",
+    "extracted_requirements": {
+      "keywords": "******* ******** ********",
+      "location": "**********, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ******* ******** ******** position at ******* in **********, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ********** ************ / ******* ******** ******** position similar to the one at *** *************",
+    "extracted_requirements": {
+      "keywords": "********** ************ / ******* ******** ********",
+      "location": "***********, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ********** ************ / ******* ******** ******** position at *** ************* in ***********, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ** ******** - **-****** position similar to the one at *** ******** *****",
+    "extracted_requirements": {
+      "keywords": "** ******** - **-******",
+      "location": "******** ****, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ** ******** - **-****** position at *** ******** ***** in ******** ****, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Software Engineer, Frontend position similar to the one at Arc",
+    "extracted_requirements": {
+      "keywords": "software engineer, frontend",
+      "location": "San Francisco Bay Area",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Software Engineer, Frontend position at Arc in San Francisco Bay Area that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Software Engineer, Frontend position similar to the one at Wealthfront",
+    "extracted_requirements": {
+      "keywords": "software engineer, frontend",
+      "location": "New York, NY",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Software Engineer, Frontend position at Wealthfront in New York, NY that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Frontend Developer \u2013 Spain position similar to the one at Remlance.com",
+    "extracted_requirements": {
+      "keywords": "frontend developer \u2013 spain",
+      "location": "United States",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Frontend Developer \u2013 Spain position at Remlance.com in United States that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ***** *** ******** ******** position similar to the one at **********",
+    "extracted_requirements": {
+      "keywords": "***** *** ******** ********",
+      "location": "*****, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ***** *** ******** ******** position at ********** in *****, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ***** *** ********* position similar to the one at *****",
+    "extracted_requirements": {
+      "keywords": "***** *** *********",
+      "location": "******, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ***** *** ********* position at ***** in ******, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a *****-*** ******** ******** (*** *********) position similar to the one at ********** ************",
+    "extracted_requirements": {
+      "keywords": "*****-*** ******** ******** (*** *********)",
+      "location": "********, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a *****-*** ******** ******** (*** *********) position at ********** ************ in ********, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Backend Software Engineer Graduate (TikTok Eng - Backend Online Infra Team) - 2025 Start (BS/MS) position similar to the one at TikTok",
+    "extracted_requirements": {
+      "keywords": "backend software engineer graduate (tiktok eng - backend online infra team) - 2025 start (bs/ms)",
+      "location": "San Jose, CA",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Backend Software Engineer Graduate (TikTok Eng - Backend Online Infra Team) - 2025 Start (BS/MS) position at TikTok in San Jose, CA that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Full-Stack Engineer position similar to the one at Creatify AI",
+    "extracted_requirements": {
+      "keywords": "full-stack engineer",
+      "location": "Mountain View, CA",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Full-Stack Engineer position at Creatify AI in Mountain View, CA that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Full-Stack Engineer (Back-End Leaning) position similar to the one at ElevenLabs",
+    "extracted_requirements": {
+      "keywords": "full-stack engineer (back-end leaning)",
+      "location": "United States",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Full-Stack Engineer (Back-End Leaning) position at ElevenLabs in United States that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a **. **** ***** ******** position similar to the one at *****",
+    "extracted_requirements": {
+      "keywords": "**. **** ***** ********",
+      "location": "************, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a **. **** ***** ******** position at ***** in ************, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a **. **** ***** *********-******* ******* position similar to the one at *********",
+    "extracted_requirements": {
+      "keywords": "**. **** ***** *********-******* *******",
+      "location": "****, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a **. **** ***** *********-******* ******* position at ********* in ****, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a ******** ******** ***, **** *****, **** position similar to the one at ******",
+    "extracted_requirements": {
+      "keywords": "******** ******** ***, **** *****, ****",
+      "location": "*** ****, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a ******** ******** ***, **** *****, **** position at ****** in *** ****, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a **** ***** ******** position similar to the one at ****",
+    "extracted_requirements": {
+      "keywords": "**** ***** ********",
+      "location": "*** **** **** ************ ****",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a **** ***** ******** position at **** in *** **** **** ************ **** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Full-Stack Engineer position similar to the one at Creatify AI",
+    "extracted_requirements": {
+      "keywords": "full-stack engineer",
+      "location": "Mountain View, CA",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Full-Stack Engineer position at Creatify AI in Mountain View, CA that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Full-Stack Developer position similar to the one at SupportFinity\u2122",
+    "extracted_requirements": {
+      "keywords": "full-stack developer",
+      "location": "United States",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Full-Stack Developer position at SupportFinity\u2122 in United States that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a Full-Stack Engineer (Back-End Leaning) position similar to the one at ElevenLabs",
+    "extracted_requirements": {
+      "keywords": "full-stack engineer (back-end leaning)",
+      "location": "United States",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a Full-Stack Engineer (Back-End Leaning) position at ElevenLabs in United States that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a **. **** ***** *********-******* ******* position similar to the one at *********",
+    "extracted_requirements": {
+      "keywords": "**. **** ***** *********-******* *******",
+      "location": "****, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a **. **** ***** *********-******* ******* position at ********* in ****, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a **. **** ***** ******** position similar to the one at *****",
+    "extracted_requirements": {
+      "keywords": "**. **** ***** ********",
+      "location": "************, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a **. **** ***** ******** position at ***** in ************, ** that matches your criteria.",
+    "task_type": "job_matching"
+  },
+  {
+    "user_message": "I'm looking for a **** ***** ******** position similar to the one at ********",
+    "extracted_requirements": {
+      "keywords": "**** ***** ********",
+      "location": "*** *********, **",
+      "experience_level": "mid",
+      "job_type": "full-time",
+      "skills": [],
+      "company_type": "any"
+    },
+    "response": "I found a **** ***** ******** position at ******** in *** *********, ** that matches your criteria.",
+    "task_type": "job_matching"
+  }
+]

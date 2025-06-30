@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobless AI</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="manifest" href="/static/site.webmanifest">
+    
+    <link rel="stylesheet" href="/static/chatbox.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar for chat history -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-briefcase"></i> Jobless AI</h3>
+                <button class="new-chat-btn" onclick="startNewChat()">
+                    <i class="fas fa-plus"></i> New Chat
+                </button>
+            </div>
+            
+            <div class="chat-history-section">
+                <div class="history-header">
+                    <h4><i class="fas fa-history"></i> Chat History</h4>
+                    <button class="clear-history-btn" onclick="clearChatHistory()">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                <div class="chat-history-list" id="chatHistoryList">
+                    <!-- Chat history items will be loaded here -->
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="userIdDisplay">User</span>
+                </div>
+                <button class="settings-btn" onclick="toggleSettings()">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main chat area -->
+        <div class="main-chat">
+            <!-- Header -->
+            <div class="chat-header">
+                <button class="sidebar-toggle" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="header-title">
+                    <h2><i class="fas fa-robot"></i> Job Search Assistant</h2>
+                    <p class="status-indicator" id="connectionStatus">
+                        <i class="fas fa-circle"></i> Connected
+                    </p>
+                </div>
+                <div class="header-actions">
+                    <button class="export-btn" onclick="exportChat()">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="fullscreen-btn" onclick="toggleFullscreen()">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Messages container -->
+            <div class="messages-container" id="messagesContainer">
+                <div class="welcome-message">
+                    <div class="welcome-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Welcome to Job Search AI</h3>
+                    <p>I'm here to help you find your dream job. Tell me what you're looking for!</p>
+                    <div class="suggestion-chips">
+                        <button class="chip" onclick="sendSuggestion('Remote Python developer')">
+                            Remote Python developer
+                        </button>
+                        <button class="chip" onclick="sendSuggestion('Frontend engineer in NYC')">
+                            Frontend engineer in NYC
+                        </button>
+                        <button class="chip" onclick="sendSuggestion('Data scientist with ML experience')">
+                            Data scientist with ML
+                        </button>
+                        <button class="chip" onclick="sendSuggestion('Senior full-stack developer')">
+                            Senior full-stack developer
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input area -->
+            <div class="input-area">
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <textarea 
+                            id="messageInput" 
+                            placeholder="Describe your ideal job (e.g., 'I'm looking for a senior Python developer job in New York with React experience')"
+                            rows="1"
+                            onkeydown="handleKeyDown(event)"
+                            oninput="autoResize(this)"
+                        ></textarea>
+                        <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-footer">
+                    <p>AI can make mistakes. Consider checking important information.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Settings</h3>
+                <button class="close-modal" onclick="closeSettings()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <h4>Chat Preferences</h4>
+                    <label class="setting-item">
+                        <input type="checkbox" id="autoScroll" checked>
+                        <span>Auto-scroll to new messages</span>
+                    </label>
+                    <label class="setting-item">
+                        <input type="checkbox" id="soundEnabled" checked>
+                        <span>Sound notifications</span>
+                    </label>
+                </div>
+                <div class="setting-group">
+                    <h4>Search Preferences</h4>
+                    <label class="setting-item">
+                        <span>Default location:</span>
+                        <input type="text" id="defaultLocation" placeholder="e.g., New York, NY">
+                    </label>
+                    <label class="setting-item">
+                        <span>Max results:</span>
+                        <select id="maxResults">
+                            <option value="5">5 jobs</option>
+                            <option value="10" selected>10 jobs</option>
+                            <option value="20">20 jobs</option>
+                        </select>
+                    </label>
+                </div>
+        </div>
+    </div>
+
+    <script src="/static/chatbox.js"></script>
+</body>
+</html> 

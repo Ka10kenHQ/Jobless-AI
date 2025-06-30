@@ -1,0 +1,111 @@
+{
+  "added_tokens_decoder": {
+    "0": {
+      "content": "<s>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "1": {
+      "content": "<pad>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "2": {
+      "content": "</s>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "3": {
+      "content": "<unk>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "256001": {
+      "content": "<madeupword0>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "256002": {
+      "content": "<madeupword1>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "256003": {
+      "content": "<madeupword2>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "256004": {
+      "content": "<madeupword3>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "256005": {
+      "content": "<madeupword4>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "256006": {
+      "content": "<madeupword5>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "256007": {
+      "content": "<madeupword6>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    }
+  },
+  "additional_special_tokens": [
+    "<madeupword0>",
+    "<madeupword1>",
+    "<madeupword2>",
+    "<madeupword3>",
+    "<madeupword4>",
+    "<madeupword5>",
+    "<madeupword6>"
+  ],
+  "bos_token": "<s>",
+  "clean_up_tokenization_spaces": true,
+  "cls_token": "<s>",
+  "eos_token": "</s>",
+  "model_max_length": 2048,
+  "pad_token": "<pad>",
+  "sep_token": "</s>",
+  "sp_model_kwargs": {},
+  "tokenizer_class": "XGLMTokenizer",
+  "unk_token": "<unk>"
+}
