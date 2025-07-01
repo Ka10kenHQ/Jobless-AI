@@ -1,10 +1,5 @@
-// MongoDB initialization script for MCP Job Search System
-// This script runs when the MongoDB container starts for the first time
-
-// Switch to the job_search database
 db = db.getSiblingDB('job_search');
 
-// Create a user for the application
 db.createUser({
   user: 'job_search_app',
   pwd: 'app_password_change_in_production',
@@ -16,13 +11,11 @@ db.createUser({
   ]
 });
 
-// Create collections with indexes for better performance
 db.createCollection('jobs');
 db.createCollection('training_data');
 db.createCollection('user_searches');
 db.createCollection('system_logs');
 
-// Create indexes for jobs collection
 db.jobs.createIndex({ "title": "text", "description": "text", "company": "text" });
 db.jobs.createIndex({ "location": 1 });
 db.jobs.createIndex({ "posted_date": -1 });
@@ -31,22 +24,18 @@ db.jobs.createIndex({ "job_url": 1 }, { unique: true });
 db.jobs.createIndex({ "skills": 1 });
 db.jobs.createIndex({ "experience_level": 1 });
 
-// Create indexes for training_data collection
 db.training_data.createIndex({ "created_at": -1 });
 db.training_data.createIndex({ "language": 1 });
 db.training_data.createIndex({ "data_type": 1 });
 
-// Create indexes for user_searches collection
 db.user_searches.createIndex({ "user_id": 1 });
 db.user_searches.createIndex({ "timestamp": -1 });
 db.user_searches.createIndex({ "search_query": "text" });
 
-// Create indexes for system_logs collection
 db.system_logs.createIndex({ "timestamp": -1 });
 db.system_logs.createIndex({ "level": 1 });
 db.system_logs.createIndex({ "component": 1 });
 
-// Insert some initial configuration data
 db.system_config.insertOne({
   _id: "app_config",
   version: "1.0.0",
@@ -63,7 +52,6 @@ db.system_config.insertOne({
   updated_at: new Date()
 });
 
-// Insert sample job categories
 db.job_categories.insertMany([
   { name: "Software Development", name_ka: "პროგრამული უზრუნველყოფის განვითარება" },
   { name: "Data Science", name_ka: "მონაცემთა მეცნიერება" },

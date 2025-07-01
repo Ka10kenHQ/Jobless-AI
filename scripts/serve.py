@@ -23,10 +23,7 @@ def main():
     args = parser.parse_args()
     
     if args.trained_model is None and not args.force_base:
-        default_model_path = "./models/job_search_model"
-        if os.path.exists(default_model_path) and os.path.exists(os.path.join(default_model_path, "adapter_config.json")):
-            args.trained_model = default_model_path
-            print(f"🎯 Auto-detected trained model at: {default_model_path}")
+        pass
     
     model_type = "🎯 Trained Model" if args.trained_model else "📱 Base Model"
     print(f"🚀 Starting MCP Job Search Server ({model_type})...")
