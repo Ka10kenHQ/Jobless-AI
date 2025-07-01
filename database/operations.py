@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from typing import List, Optional, Dict, Any, Union
 from bson import ObjectId
 from motor.motor_asyncio import AsyncIOMotorCollection
-from pymongo.errors import DuplicateKeyError
+from pymongo.errors import DuplicateKeyError, BulkWriteError
 
 from .connection import get_async_collection, get_collection
 from .models import (
@@ -245,15 +245,18 @@ class TrainingOperations(BaseOperations):
         try:
             result = await collection.insert_many(unique_examples, ordered=False)
             return len(result.inserted_ids)
-        except DuplicateKeyError:
+        except (DuplicateKeyError, BulkWriteError) as e:
             # Handle duplicates by inserting one by one
+            print(f"⚠️ Handling duplicate keys, inserting {len(unique_examples)} examples individually...")
             inserted_count = 0
             for example_dict in unique_examples:
                 try:
                     await collection.insert_one(example_dict)
                     inserted_count += 1
-                except DuplicateKeyError:
+                except (DuplicateKeyError, BulkWriteError):
+                    # Skip duplicates silently
                     continue
+            print(f"✅ Successfully inserted {inserted_count} new examples (skipped duplicates)")
             return inserted_count
     
     async def update_quality_scores(self, scores: Dict[str, float]):
