@@ -107,8 +107,51 @@ node_modules/
 
 # Docker
 .docker/
+docker-compose.override.yml
+docker-compose.override.yaml
+
+# Docker volumes and persistent data
+volumes/
+backups/
+
+# SSL certificates and security
+ssl/
+certs/
+*.key
+*.crt
+*.pem
+*.p12
+*.pfx
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+secrets/
+*.secret
+
+# DevOps and CI/CD
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+.vagrant/
+
+# Monitoring and logs specific
+tensorboard_logs/
+checkpoints/
+*.tensorboard
 
 # System files
 *.pid
 *.seed
-*.pid.lock 
+*.pid.lock
+
+# Backup and temporary DevOps files
+*.backup
+*.bak
+*.orig
+*.tmp
+*~
+.#*
+#*# 

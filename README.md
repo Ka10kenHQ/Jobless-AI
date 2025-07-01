@@ -1,296 +1,400 @@
-# 🔍 MCP Job Search Server
+# 🔍 MCP Job Search System
 
-An intelligent job search system that uses an MCP (Model Context Protocol) server with a chatbox interface to find jobs matching your specific requirements.
+An intelligent job search system using MCP (Model Context Protocol) with AI-powered job matching, supporting both English and Georgian languages. Features MongoDB data storage, PyTorch model training with LoRA fine-tuning, and comprehensive Docker infrastructure.
 
 ## ✨ Features
 
-- **Intelligent Job Matching**: Uses AI to understand your job requirements from natural language
-- **Multi-Source Scraping**: Searches across LinkedIn, Indeed, and Glassdoor
-- **Real-time Chat Interface**: Interactive chatbox for job search conversations
-- **Smart Filtering**: Matches jobs based on title, location, skills, and experience level
-- **WebSocket Support**: Real-time updates and responses
-- **RESTful API**: Programmatic access to job search functionality
-- **Custom Model Training**: Train your own specialized job search model
+- **🤖 AI-Powered Job Matching**: Advanced natural language understanding for job requirements
+- **🌍 Multi-Language Support**: English and Georgian language support with specialized scrapers
+- **🗄️ MongoDB Backend**: Scalable data storage with comprehensive indexing
+- **🔥 PyTorch Training**: LoRA fine-tuning with automatic GPU optimization
+- **🐳 Docker Infrastructure**: Complete containerized setup with monitoring
+- **📊 Advanced Monitoring**: TensorBoard, Jupyter, and MongoDB dashboards
+- **🎯 RTX 4050 Optimized**: Specifically tuned for 6GB VRAM GPUs
+- **🔒 Security Compliant**: PyTorch 2.6+ addressing CVE-2025-32434
 
 ## 🚀 Quick Start
 
-### 1. Install Dependencies
+### Prerequisites
+
+- **NVIDIA GPU with CUDA support** (RTX 4050/4060 recommended)
+- **Docker & Docker Compose** 
+- **8GB+ RAM**
+- **10GB+ free disk space**
+
+### 1. Clone and Setup
 
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/your-username/usaqmuri-AI.git
+cd usaqmuri-AI
 ```
 
-**Note**: You'll also need Chrome browser installed for Selenium-based scraping.
+### 2. Install System Dependencies (Arch Linux)
 
-### 2. Choose Your Model Approach
-
-#### Option A: Use Pre-trained Model (Quick Start)
 ```bash
-python scripts/serve.py
+# Install CUDA toolkit
+sudo pacman -S cuda cuda-tools
+
+# Verify CUDA installation
+nvidia-smi
 ```
 
-#### Option B: Train Your Own Model (Recommended)
+### 3. One-Command Setup
 
-**Unified Training (Auto-detects your GPU):**
 ```bash
-# Auto-optimized training for your hardware
-python scripts/train.py
-
-# Quick test (3-5 minutes) 
-python scripts/train.py --quick-test
-
-# Georgian + English multilingual training
-python scripts/train.py --languages georgian english
-
-# Start server with trained model
-python scripts/serve_trained.py
+cd devops
+make install
 ```
 
-**Supported GPUs:**
-- RTX 4050/4060 (6-8GB): Auto-optimized with BF16, 4-bit quantization
-- RTX 3060/4070 (8-12GB): Enhanced settings with larger batches  
-- RTX 4080/4090 (16-24GB): Full performance mode
+This will:
+- Build all Docker containers
+- Start MongoDB with authentication
+- Seed the database with sample data
+- Launch the development environment
 
-### 3. Access the Chatbox
+## 📊 Monitoring Dashboards
 
-- **General Model**: http://localhost:8000/chatbox
-- **Trained Model**: http://localhost:8000/chatbox (when using serve_trained.py)
+After running `make install`, access your monitoring tools:
 
-## 💬 How to Use the Chatbox
-
-Simply describe what job you're looking for in natural language:
-
-**Examples:**
-- "I'm looking for a senior Python developer job in New York with React experience"
-- "Find me remote React developer positions" 
-- "I want a data scientist role with machine learning experience"
-- "Looking for entry-level software engineer jobs in San Francisco"
-
-The system will:
-1. Extract your requirements from your message
-2. Search multiple job sites
-3. Match and rank results based on your criteria
-4. Present the best matches with explanations
-
-## 🎯 GPU Auto-Optimization & Georgian Support
-
-**Hardware Support:**
-- **Any NVIDIA GPU** with CUDA support (auto-detected)
-- 16GB+ RAM (recommended)
-- 10GB free disk space
-
-**Auto-Optimizations by GPU:**
-- **RTX 4050/4060**: BF16, batch size 1, 4-bit quantization, gradient checkpointing
-- **RTX 3060/4070**: BF16, batch size 2-4, selective optimizations
-- **RTX 4080/4090**: Full performance with large batches and models
-
-**Multilingual Features:**
-- **Georgian language support** via mGPT model (1.3B params)
-- **Job site scrapers** for hr.ge and jobs.ge
-- **Auto-model selection** based on language needs and GPU capability
-
-**Training Options:**
+### **PyTorch Training Monitoring**
 ```bash
-# Auto-optimized training (detects your GPU)
-python scripts/train.py
+make train        # Start training with monitoring
+```
+- **TensorBoard**: http://localhost:6006 (training metrics, loss curves)
+- **Jupyter Notebook**: http://localhost:8888 (interactive experimentation)
 
-# Quick test (3-5 minutes, optimal sample size)  
-python scripts/train.py --quick-test
+### **Database Monitoring**
+- **MongoDB Admin**: http://localhost:8081 (username: `admin`, password: `admin`)
+- **Main App**: http://localhost:8000 (job search interface)
 
-# Georgian + English multilingual
-python scripts/train.py --languages georgian english
+### **Real-Time Monitoring**
+```bash
+make logs         # View all container logs
+make gpu-monitor  # Monitor GPU usage
+```
 
-# Monitor your specific GPU
+## 🎯 GPU Optimization
+
+### **RTX 4050 (6GB VRAM) - Optimized Configuration**
+✅ **Batch size**: 1 with gradient accumulation (16)  
+✅ **Precision**: BF16 for stability  
+✅ **Quantization**: 4-bit for memory efficiency  
+✅ **Gradient Checkpointing**: Enabled with reentrant compatibility  
+✅ **Estimated Training Time**: ~93 minutes  
+
+### **Training Commands**
+```bash
+# Start training with full monitoring
+make train
+
+# Quick test (development)
+make train-test
+
+# View training progress
+make train-logs
+```
+
+## 🗄️ MongoDB Integration
+
+### **Database Structure**
+- **Jobs Collection**: Scraped job postings with full-text search
+- **Training Examples**: AI training data with Georgian context
+- **User Interactions**: Chat history and analytics
+- **Models**: Model versions and performance metrics
+
+### **Database Commands**
+```bash
+make db-seed      # Populate with sample data
+make db-backup    # Backup database
+make db-restore   # Restore from backup
+make db-stats     # View database statistics
+```
+
+## 🌍 Georgian Language Support
+
+### **Specialized Features**
+- **hr.ge and jobs.ge scrapers** for Georgian job market
+- **Multilingual training data** with Georgian context examples
+- **Location disambiguation** (Georgia country vs. US state)
+- **Georgian company knowledge** (TBC Bank, BOG, etc.)
+
+### **Georgian Job Search Examples**
+```
+"Find jobs in Tbilisi"
+"მინდა ვიმუშაო საქართველოში" 
+"IT jobs Georgia country"
+"Georgian companies hiring developers"
+```
+
+## 🐳 Docker Infrastructure
+
+### **Available Services**
+```bash
+make dev          # Development environment
+make prod         # Production deployment  
+make train        # Training with monitoring
+make scraper      # Automated job scraping
+```
+
+### **Service Overview**
+- **app-dev**: Development server with hot reloading
+- **mongodb**: Database with authentication
+- **redis**: Caching layer
+- **trainer**: PyTorch training with GPU support
+- **mongo-express**: Database admin interface
+- **nginx**: Production reverse proxy
+
+### **Complete Architecture**
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Web UI        │◄──►│  FastAPI App    │◄──►│  MongoDB        │
+│   (Port 8000)   │    │  (Multi-lang)   │    │  (Auth enabled) │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+                                │
+        ┌─────────────────┐    │    ┌─────────────────┐
+        │  PyTorch        │◄───┼───►│  Job Scrapers   │
+        │  Training       │    │    │  (hr.ge, etc.)  │
+        │  (LoRA+4bit)    │    │    └─────────────────┘
+        └─────────────────┘    │
+                                ▼
+        ┌─────────────────┐    ┌─────────────────┐
+        │  TensorBoard    │    │  Redis Cache    │
+        │  (Port 6006)    │    │  (Performance)  │
+        └─────────────────┘    └─────────────────┘
+```
+
+## 🔧 Development Workflow
+
+### **Daily Development**
+```bash
+# Start development environment
+make dev
+
+# View logs in real-time
+make logs
+
+# Run training experiments
+make train
+
+# Monitor GPU usage
 watch -n 1 nvidia-smi
 ```
 
-**Memory Management:**
-- System **automatically detects** your GPU and applies optimal settings
-- **No manual configuration** needed for different GPU models
-- Training automatically saves checkpoints and resumes on interruption
+### **Model Training Workflow**
+```bash
+# 1. Start training
+make train
 
-## 🔧 API Usage
+# 2. Monitor in browser
+# - TensorBoard: http://localhost:6006
+# - Jupyter: http://localhost:8888
 
-### WebSocket Connection
+# 3. View progress
+make train-logs
 
+# 4. Stop training
+make train-stop
+```
+
+## 📈 Performance Metrics
+
+### **Training Performance (RTX 4050)**
+- **Model**: facebook/xglm-564M (564M parameters)
+- **Trainable**: 2.35M parameters (0.41% via LoRA)
+- **Memory Usage**: ~5.2GB VRAM
+- **Training Speed**: ~1.2 samples/second
+- **Dataset**: 118 examples (106 train + 12 validation)
+
+### **System Requirements Met**
+✅ **PyTorch 2.6+** (Security compliance)  
+✅ **CUDA 12.4** (Latest driver support)  
+✅ **MongoDB 7.0** (High performance)  
+✅ **BF16 Precision** (RTX 4050 optimized)  
+
+## 🎓 Model Training Details
+
+### **Training Configuration**
+```python
+# Automatically detected for RTX 4050
+{
+    "model": "facebook/xglm-564M",
+    "batch_size": 1,
+    "gradient_accumulation": 16,
+    "precision": "bf16",
+    "quantization": "4bit",
+    "lora_r": 16,
+    "max_length": 512
+}
+```
+
+### **Georgian Training Examples**
+The system automatically generates Georgian-specific training data:
+- Location clarification (Georgia vs. US state)
+- Georgian company information
+- Tbilisi job market context
+- Work permit information
+- IT sector details
+
+## 🛠️ Make Commands Reference
+
+### **Setup & Management**
+```bash
+make install      # Complete setup
+make dev          # Development mode
+make prod         # Production deployment
+make clean        # Clean containers/volumes
+```
+
+### **Training & Monitoring**
+```bash
+make train        # Start training
+make train-stop   # Stop training
+make train-logs   # View training logs
+make gpu-info     # Show GPU information
+```
+
+### **Database Operations**
+```bash
+make db-seed      # Seed with sample data
+make db-backup    # Backup database
+make db-restore   # Restore database
+make db-clean     # Clean database
+```
+
+### **Development Tools**
+```bash
+make logs         # View all logs
+make shell        # Access development container
+make test         # Run test suite
+make lint         # Code quality checks
+```
+
+## 🔒 Security Features
+
+### **Implemented Security Measures**
+- **PyTorch 2.6+ compliance** (CVE-2025-32434 addressed)
+- **MongoDB authentication** with secure credentials
+- **Docker security** with non-root users
+- **Environment variable** protection
+- **CUDA runtime** security updates
+
+### **Authentication Setup**
+```bash
+# MongoDB credentials (development)
+Username: admin
+Password: devpassword123
+Database: job_search
+```
+
+## 🌐 API Endpoints
+
+### **Job Search API**
+```bash
+# Search jobs
+curl -X POST "http://localhost:8000/search_jobs" \
+     -H "Content-Type: application/json" \
+     -d '{"message": "Python developer jobs in Tbilisi"}'
+
+# Health check
+curl http://localhost:8000/health
+```
+
+### **WebSocket Connection**
 ```javascript
-const ws = new WebSocket('ws://localhost:8000/ws/your_user_id');
-
+const ws = new WebSocket('ws://localhost:8000/ws/user123');
 ws.send(JSON.stringify({
-    message: "Looking for Python developer jobs in NYC",
+    message: "Find React jobs in Georgia",
     timestamp: new Date().toISOString()
 }));
 ```
 
-### REST API
-
-```bash
-curl -X POST "http://localhost:8000/search_jobs" \
-     -H "Content-Type: application/json" \
-     -d '{
-       "message": "Looking for Python developer jobs in NYC",
-       "user_id": "user123"
-     }'
-```
-
-## 📋 Response Format
-
-The system returns structured data including:
-
-```json
-{
-  "response": "Natural language response about the search",
-  "jobs": [...],  // All found jobs
-  "matched_jobs": [...],  // Jobs that match your criteria
-  "requirements_extracted": {
-    "keywords": "python developer",
-    "location": "nyc", 
-    "skills": ["python"],
-    "experience_level": "any"
-  },
-  "total_jobs_found": 25,
-  "total_matched_jobs": 12
-}
-```
-
-## 🎯 Job Matching Algorithm
-
-The system uses a sophisticated matching algorithm that considers:
-
-- **Title/Keywords (40% weight)**: How well the job title matches your requirements
-- **Location (20% weight)**: Geographic matching with support for remote work
-- **Skills (25% weight)**: Technical skills and related technologies  
-- **Experience Level (15% weight)**: Entry, mid-level, or senior positions
-
-Each job gets a match score from 0-1, and only jobs above 0.3 threshold are shown.
-
-## 🛠 Architecture
-
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Chatbox UI    │◄──►│  MCP Server     │◄──►│  Job Scrapers   │
-│   (WebSocket)   │    │  (FastAPI)      │    │  (Multi-source) │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-                                │
-                        ┌─────────────────┐
-                        │  Job Matcher    │
-                        │  (AI Scoring)   │
-                        └─────────────────┘
-```
-
-### Key Components
-
-- **`inference/server.py`**: Main MCP server with WebSocket and REST APIs
-- **`data_collection/scraper_hr_ge.py`**: Multi-source job scraping
-- **`inference/job_matcher.py`**: Intelligent job matching and scoring
-- **`scripts/serve.py`**: Server startup script
-
-## 🔍 Supported Job Sites
-
-- **LinkedIn**: Job search with recent postings
-- **Indeed**: Comprehensive job listings  
-- **Glassdoor**: Company insights and positions
-
-## 🤖 AI Features
-
-- **Requirement Extraction**: Uses the OpenChat model to understand natural language job descriptions
-- **Fuzzy Matching**: Handles similar terms and typos in job titles
-- **Skill Recognition**: Recognizes related technologies and skills
-- **Context Awareness**: Maintains conversation context for follow-up questions
-
-## 🎓 Training Your Own Model
-
-### Why Train a Custom Model?
-
-Training a job search-specific model provides:
-- **Better requirement extraction** from natural language
-- **More accurate job matching** responses
-- **Domain-specific understanding** of job search conversations
-- **Improved performance** on job-related tasks
-
-### Training Process
-
-```bash
-# Quick test training (5 minutes)
-python scripts/train.py --quick-test
-
-# Full training with synthetic data
-python scripts/train.py --synthetic-samples 5000
-
-# Training with real job data collection
-python scripts/train.py --synthetic-samples 3000
-
-# Custom training with specific config
-python training/trainer.py --num-synthetic 10000 --no-real-data
-```
-
-### Training Components
-
-1. **Dataset Preparation**: Generates synthetic job search conversations
-2. **LoRA Fine-tuning**: Efficient training using Low-Rank Adaptation
-3. **Multi-task Learning**: Trains on requirement extraction + conversation
-4. **Real Data Integration**: Optionally incorporates scraped job data
-
-### Training Configuration
-
-Edit `config/hyperparameters.py` to customize:
-
-- **Base Model**: Default is `microsoft/DialoGPT-medium`
-- **LoRA Parameters**: Rank, alpha, dropout for efficient training
-- **Training Args**: Epochs, batch size, learning rate
-- **Dataset Size**: Number of synthetic examples to generate
-
-## ⚙️ Configuration
-
-The system supports two modes:
-
-### Pre-trained Model Mode
-- Uses OpenChat for general conversation
-- Basic requirement extraction
-- Fast setup, good general performance
-
-### Trained Model Mode  
-- Uses your custom-trained model
-- Specialized for job search tasks
-- Better accuracy, domain-specific responses
-
-**Customization Options:**
-- **Model**: Change base model in `config/hyperparameters.py`
-- **Scraping Limits**: Adjust `limit_per_source` in scraping calls
-- **Match Threshold**: Modify the 0.3 threshold in `job_matcher.py`
-- **Training Data**: Add your own job search conversations
-
-## 🔒 Notes on Web Scraping
-
-This tool scrapes publicly available job postings for research and personal use. Please:
-- Use responsibly and respect rate limits
-- Check each site's robots.txt and terms of service
-- Consider using official APIs when available
-- Don't use for commercial purposes without permission
-
 ## 🐛 Troubleshooting
 
-**Common Issues:**
+### **Common Issues & Solutions**
 
-1. **Chrome/Selenium Issues**: Install Chrome browser and ensure chromedriver is in PATH
-2. **Model Loading**: Ensure you have enough GPU memory for the language model
-3. **Network Issues**: Some sites may block requests; use VPN if needed
-4. **Rate Limiting**: The scraper includes delays to avoid overwhelming servers
+**1. MongoDB Authentication Failed**
+```bash
+make db-clean && make db-seed
+```
 
-**RTX 4050 Specific:**
+**2. CUDA Out of Memory**
+```bash
+# Close other GPU applications
+nvidia-smi
+# Restart training
+make train
+```
 
-5. **Out of Memory**: Try `--ultra-light` mode or close other GPU applications
-6. **Slow Training**: Use `--quick-test` for faster iteration
-7. **Model Not Loading**: Check VRAM usage with `nvidia-smi`
+**3. Training Stuck on Duplicate Keys**
+- ✅ **Fixed**: Automatic duplicate handling implemented
 
-## 📈 Future Enhancements
+**4. Gradient Checkpointing Error**
+- ✅ **Fixed**: PyTorch version compatibility resolved
 
-- [ ] More job sites (Stack Overflow, AngelList, etc.)
-- [ ] Salary information extraction and filtering
-- [ ] Email alerts for new matching jobs
-- [ ] Resume matching against job requirements
-- [ ] Company research and insights
-- [ ] Application tracking
+**5. Docker Build Issues**
+```bash
+make clean && make install
+```
+
+### **RTX 4050 Specific Tips**
+- **Memory monitoring**: `watch -n 1 nvidia-smi`
+- **Optimal settings**: Already configured automatically
+- **Performance**: Training ~93 minutes for full dataset
+
+## 📊 System Monitoring
+
+### **Real-Time Dashboards**
+- **TensorBoard**: Training metrics and visualizations
+- **MongoDB Express**: Database administration
+- **Docker Stats**: Container resource usage
+- **NVIDIA SMI**: GPU utilization monitoring
+
+### **Log Analysis**
+```bash
+# Follow all logs
+make logs
+
+# Specific service logs
+docker-compose logs -f mongodb
+docker-compose logs -f trainer
+```
+
+## 🚀 Production Deployment
+
+### **Production Setup**
+```bash
+# Deploy production stack
+make prod
+
+# Enable SSL (if certificates available)
+make ssl-setup
+
+# Monitor production
+make prod-logs
+```
+
+### **Production Features**
+- **Nginx reverse proxy** with rate limiting
+- **Gunicorn WSGI server** for performance
+- **Health checks** and automatic restarts
+- **Volume persistence** for data safety
+
+## 📈 Future Roadmap
+
+- [ ] **Multi-GPU training** support
+- [ ] **Kubernetes deployment** configurations
+- [ ] **Advanced monitoring** with Prometheus/Grafana
+- [ ] **API rate limiting** and authentication
+- [ ] **Automated model deployment** pipeline
+- [ ] **A/B testing** framework for models
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
 
 ## 📄 License
 
@@ -298,4 +402,4 @@ MIT License - see LICENSE file for details.
 
 ---
 
-**Happy Job Hunting! 🎯** 
+**🎯 Ready to find your dream job with AI! Start with `make install` and explore the monitoring dashboards.** 

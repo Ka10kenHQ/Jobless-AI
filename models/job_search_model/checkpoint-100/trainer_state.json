@@ -1,5 +1,5 @@
 {
-  "best_metric": 3.840688705444336,
+  "best_metric": 3.8521201610565186,
   "best_model_checkpoint": "./models/job_search_model/checkpoint-100",
   "epoch": 1.7777777777777777,
   "eval_steps": 50,
@@ -11,77 +11,77 @@
     {
       "epoch": 0.18,
       "learning_rate": 5e-06,
-      "loss": 6.7142,
+      "loss": 6.7183,
       "step": 10
     },
     {
       "epoch": 0.36,
       "learning_rate": 1e-05,
-      "loss": 6.5822,
+      "loss": 6.5841,
       "step": 20
     },
     {
       "epoch": 0.53,
       "learning_rate": 1.5e-05,
-      "loss": 6.6759,
+      "loss": 6.6821,
       "step": 30
     },
     {
       "epoch": 0.71,
       "learning_rate": 2e-05,
-      "loss": 6.6146,
+      "loss": 6.6252,
       "step": 40
     },
     {
       "epoch": 0.89,
       "learning_rate": 2.5e-05,
-      "loss": 6.4541,
+      "loss": 6.4737,
       "step": 50
     },
     {
       "epoch": 0.89,
-      "eval_loss": 6.017399311065674,
-      "eval_runtime": 1.791,
-      "eval_samples_per_second": 55.835,
-      "eval_steps_per_second": 55.835,
+      "eval_loss": 6.052786827087402,
+      "eval_runtime": 1.7495,
+      "eval_samples_per_second": 57.158,
+      "eval_steps_per_second": 57.158,
       "step": 50
     },
     {
       "epoch": 1.07,
       "learning_rate": 3e-05,
-      "loss": 6.0519,
+      "loss": 6.0784,
       "step": 60
     },
     {
       "epoch": 1.24,
       "learning_rate": 3.5e-05,
-      "loss": 5.6498,
+      "loss": 5.6732,
       "step": 70
     },
     {
       "epoch": 1.42,
       "learning_rate": 4e-05,
-      "loss": 5.0446,
+      "loss": 5.0676,
       "step": 80
     },
     {
       "epoch": 1.6,
       "learning_rate": 4.5e-05,
-      "loss": 4.7518,
+      "loss": 4.7707,
       "step": 90
     },
     {
       "epoch": 1.78,
       "learning_rate": 5e-05,
-      "loss": 4.3418,
+      "loss": 4.3574,
       "step": 100
     },
     {
       "epoch": 1.78,
-      "eval_loss": 3.840688705444336,
-      "eval_runtime": 1.7941,
-      "eval_samples_per_second": 55.739,
-      "eval_steps_per_second": 55.739,
+      "eval_loss": 3.8521201610565186,
+      "eval_runtime": 1.7557,
+      "eval_samples_per_second": 56.956,
+      "eval_steps_per_second": 56.956,
       "step": 100
     }
   ],

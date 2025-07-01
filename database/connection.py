@@ -11,7 +11,6 @@ logger = logging.getLogger(__name__)
 
 _async_client: Optional[AsyncIOMotorClient] = None
 _sync_client: Optional[MongoClient] = None
-_database_name = "job_search_ai"
 
 
 class DatabaseConfig:
@@ -21,7 +20,7 @@ class DatabaseConfig:
         self.port = int(os.getenv("MONGODB_PORT", "27017"))
         self.username = os.getenv("MONGODB_USERNAME")
         self.password = os.getenv("MONGODB_PASSWORD")
-        self.database_name = os.getenv("MONGODB_DATABASE", "job_search_ai")
+        self.database_name = os.getenv("MONGODB_DATABASE", "job_search")
         self.auth_database = os.getenv("MONGODB_AUTH_DATABASE", "admin")
         
         self.max_pool_size = int(os.getenv("MONGODB_MAX_POOL_SIZE", "10"))

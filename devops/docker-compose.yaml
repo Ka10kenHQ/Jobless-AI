@@ -1,0 +1,230 @@
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: mcp-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-admin123}
+      MONGO_INITDB_DATABASE: job_search
+    volumes:
+      - mongodb_data:/data/db
+      - mongodb_config:/data/configdb
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    ports:
+      - "27017:27017"
+    networks:
+      - mcp-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  redis:
+    image: redis:7-alpine
+    container_name: mcp-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - mcp-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  app-dev:
+    build:
+      context: ..
+      dockerfile: devops/Dockerfile
+      target: development
+    container_name: mcp-app-dev
+    restart: unless-stopped
+    environment:
+      - ENVIRONMENT=development
+      - MONGODB_HOST=mongodb
+      - MONGODB_PORT=27017
+      - MONGODB_USERNAME=admin
+      - MONGODB_PASSWORD=${MONGO_PASSWORD:-admin123}
+      - MONGODB_DATABASE=job_search
+      - MONGODB_AUTH_DATABASE=admin
+      - REDIS_URL=redis://redis:6379
+      - CUDA_VISIBLE_DEVICES=0
+      - WANDB_API_KEY=${WANDB_API_KEY}
+    volumes:
+      - ../:/app
+      - model_cache:/app/models
+      - job_data:/app/data
+      - logs:/app/logs
+    ports:
+      - "8000:8000"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - mcp-network
+    profiles:
+      - dev
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  app-prod:
+    build:
+      context: ..
+      dockerfile: devops/Dockerfile
+      target: production
+    container_name: mcp-app-prod
+    restart: unless-stopped
+    environment:
+      - ENVIRONMENT=production
+      - MONGODB_HOST=mongodb
+      - MONGODB_PORT=27017
+      - MONGODB_USERNAME=admin
+      - MONGODB_PASSWORD=${MONGO_PASSWORD:-admin123}
+      - MONGODB_DATABASE=job_search
+      - MONGODB_AUTH_DATABASE=admin
+      - REDIS_URL=redis://redis:6379
+      - CUDA_VISIBLE_DEVICES=0
+    volumes:
+      - model_cache:/app/models
+      - job_data:/app/data
+      - logs:/app/logs
+    ports:
+      - "8000:8000"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - mcp-network
+    profiles:
+      - prod
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+  trainer:
+    build:
+      context: ..
+      dockerfile: devops/Dockerfile
+      target: training
+    container_name: mcp-trainer
+    restart: "no"
+    environment:
+      - ENVIRONMENT=training
+      - MONGODB_HOST=mongodb
+      - MONGODB_PORT=27017
+      - MONGODB_USERNAME=admin
+      - MONGODB_PASSWORD=${MONGO_PASSWORD:-admin123}
+      - MONGODB_DATABASE=job_search
+      - MONGODB_AUTH_DATABASE=admin
+      - WANDB_API_KEY=${WANDB_API_KEY}
+      - CUDA_VISIBLE_DEVICES=0
+    volumes:
+      - ../:/app
+      - model_cache:/app/models
+      - job_data:/app/data
+      - logs:/app/logs
+      - training_checkpoints:/app/checkpoints
+      - tensorboard_logs:/app/tensorboard_logs
+    ports:
+      - "8888:8888" 
+      - "6006:6006" 
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - mcp-network
+    profiles:
+      - training
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  nginx:
+    image: nginx:alpine
+    container_name: mcp-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - app-prod
+    networks:
+      - mcp-network
+    profiles:
+      - prod
+
+  scraper:
+    build:
+      context: ..
+      dockerfile: devops/Dockerfile
+      target: development
+    container_name: mcp-scraper
+    restart: unless-stopped
+    environment:
+      - ENVIRONMENT=production
+      - MONGODB_HOST=mongodb
+      - MONGODB_PORT=27017
+      - MONGODB_USERNAME=admin
+      - MONGODB_PASSWORD=${MONGO_PASSWORD:-admin123}
+      - MONGODB_DATABASE=job_search
+      - MONGODB_AUTH_DATABASE=admin
+      - SCRAPER_SCHEDULE=0 */6 * * *  # Every 6 hours
+    volumes:
+      - job_data:/app/data
+      - logs:/app/logs
+    command: ["python", "scripts/scheduled_scraper.py"]
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - mcp-network
+    profiles:
+      - prod
+
+networks:
+  mcp-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local
+  mongodb_config:
+    driver: local
+  redis_data:
+    driver: local
+  model_cache:
+    driver: local
+  job_data:
+    driver: local
+  logs:
+    driver: local
+  training_checkpoints:
+    driver: local
+  tensorboard_logs:
+    driver: local 

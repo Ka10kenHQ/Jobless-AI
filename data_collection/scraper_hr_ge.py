@@ -43,7 +43,7 @@ class JobScraper:
         try:
             # Normalize keywords to string
             keywords_str = self.normalize_keywords(keywords)
-            
+
             # LinkedIn job search URL
             base_url = "https://www.linkedin.com/jobs/search"
             params = {
@@ -95,7 +95,7 @@ class JobScraper:
         try:
             # Normalize keywords to string
             keywords_str = self.normalize_keywords(keywords)
-            
+
             base_url = "https://www.indeed.com/jobs"
             params = {
                 "q": keywords_str,
@@ -149,7 +149,7 @@ class JobScraper:
         driver = None
         try:
             keywords_str = self.normalize_keywords(keywords)
-            
+
             driver = self.setup_selenium_driver()
 
             # Glassdoor job search URL
@@ -205,40 +205,46 @@ class JobScraper:
 
         return jobs
 
-    def scrape_hr_ge_jobs(self, keywords = "", limit: int = 20) -> List[Dict]:
+    def scrape_hr_ge_jobs(self, keywords="", limit: int = 20) -> List[Dict]:
         """Scrape jobs from hr.ge (Georgian job site) - updated for working endpoints"""
         jobs = []
         try:
             # Normalize keywords to string
             keywords_str = self.normalize_keywords(keywords)
-            
+
             # hr.ge main page and /companies page seem to work
             working_urls = [
                 "https://hr.ge",
                 "https://hr.ge/companies",
-                "https://hr.ge/jobseeker"
+                "https://hr.ge/jobseeker",
             ]
-            
+
             for url in working_urls:
                 try:
                     response = self.session.get(url, timeout=10)
                     if response.status_code != 200:
                         continue
-                        
-                    response.encoding = 'utf-8'
+
+                    response.encoding = "utf-8"
                     soup = BeautifulSoup(response.content, "html.parser")
-                    
+
                     # Look for any job-related content
                     # Check for links that might lead to job listings
-                    job_links = soup.find_all('a', href=True)
+                    job_links = soup.find_all("a", href=True)
                     for link in job_links:
-                        href = link.get('href', '').lower()
+                        href = link.get("href", "").lower()
                         text = link.get_text().strip()
-                        
+
                         # If we find job-related links, try to follow them
-                        if any(word in href for word in ['vacancy', 'job', 'position', 'ვაკანსია']) and len(text) > 5:
+                        if (
+                            any(
+                                word in href
+                                for word in ["vacancy", "job", "position", "ვაკანსია"]
+                            )
+                            and len(text) > 5
+                        ):
                             try:
-                                job_url = urljoin("https://hr.ge", link['href'])
+                                job_url = urljoin("https://hr.ge", link["href"])
                                 job = {
                                     "title": text,
                                     "company": "Available on hr.ge",
@@ -248,109 +254,129 @@ class JobScraper:
                                     "source": "hr.ge",
                                     "description": f"Job listing from hr.ge: {text}",
                                     "language": "georgian",
-                                    "country": "Georgia"
+                                    "country": "Georgia",
                                 }
                                 jobs.append(job)
                                 if len(jobs) >= limit:
                                     break
                             except Exception as e:
                                 continue
-                                
+
                     if len(jobs) >= limit:
                         break
-                        
+
                 except Exception as e:
                     print(f"Error with hr.ge URL {url}: {e}")
                     continue
-                    
+
         except Exception as e:
             print(f"Error scraping hr.ge: {e}")
-            
+
         print(f"hr.ge: Found {len(jobs)} jobs")
         return jobs
 
-    def scrape_jobs_ge_jobs(self, keywords = "", limit: int = 20) -> List[Dict]:
+    def scrape_jobs_ge_jobs(self, keywords="", limit: int = 20) -> List[Dict]:
         """Scrape jobs from jobs.ge (Georgian job site) - uses table-based layout"""
         jobs = []
         try:
             # Normalize keywords to string
             keywords_str = self.normalize_keywords(keywords)
-            
+
             base_url = "https://jobs.ge"
-            
+
             params = {}
             if keywords_str:
-                params['q'] = keywords_str
-                params['page'] = '1'
-                
+                params["q"] = keywords_str
+                params["page"] = "1"
+
             response = self.session.get(base_url, params=params, timeout=10)
-            response.encoding = 'utf-8'  # Ensure proper Georgian text encoding
+            response.encoding = "utf-8"
             soup = BeautifulSoup(response.content, "html.parser")
-            
+
             print(f"jobs.ge search URL: {response.url}")
-            
+
             # jobs.ge uses table structure - look for table rows with job data
             tables = soup.find_all("table")
             job_count = 0
-            
+
             for table in tables:
                 rows = table.find_all("tr")
                 for row in rows:
                     if job_count >= limit:
                         break
-                        
+
                     cells = row.find_all("td")
                     if len(cells) >= 2:  # Need at least 2 cells for job data
                         try:
                             # Extract text from cells
                             cell_texts = [cell.get_text(strip=True) for cell in cells]
-                            
+
                             # Skip header rows or empty rows
-                            if not any(cell_texts) or len(' '.join(cell_texts)) < 10:
+                            if not any(cell_texts) or len(" ".join(cell_texts)) < 10:
                                 continue
-                                
+
                             # Look for job-related content (not navigation)
-                            text_content = ' '.join(cell_texts).lower()
-                            if any(skip_word in text_content for skip_word in ['ყველა ვაკანსია', 'all vacancies', 'navigation']):
+                            text_content = " ".join(cell_texts).lower()
+                            if any(
+                                skip_word in text_content
+                                for skip_word in [
+                                    "ყველა ვაკანსია",
+                                    "all vacancies",
+                                    "navigation",
+                                ]
+                            ):
                                 continue
-                            
+
                             # Try to extract job information
                             # First cell often contains job title, second might have company/details
-                            title = cell_texts[0] if len(cell_texts) > 0 else "Unknown Position"
-                            company_or_details = cell_texts[1] if len(cell_texts) > 1 else ""
-                            
+                            title = (
+                                cell_texts[0]
+                                if len(cell_texts) > 0
+                                else "Unknown Position"
+                            )
+                            company_or_details = (
+                                cell_texts[1] if len(cell_texts) > 1 else ""
+                            )
+
                             # Look for links in the row
                             links = row.find_all("a", href=True)
                             job_url = ""
                             if links:
                                 job_url = urljoin("https://jobs.ge", links[0]["href"])
-                            
+
                             # Basic validation - skip if title is too generic or empty
-                            if len(title) > 5 and title not in ['ყველა ვაკანსია', 'All Jobs']:
+                            if len(title) > 5 and title not in [
+                                "ყველა ვაკანსია",
+                                "All Jobs",
+                            ]:
                                 job = {
                                     "title": title,
-                                    "company": company_or_details.split('\n')[0] if company_or_details else "Unknown Company",
+                                    "company": (
+                                        company_or_details.split("\n")[0]
+                                        if company_or_details
+                                        else "Unknown Company"
+                                    ),
                                     "location": "Tbilisi, Georgia (country)",  # Default to Tbilisi
                                     "salary": "",
                                     "url": job_url,
                                     "source": "jobs.ge",
                                     "description": company_or_details,
                                     "language": "georgian",  # Mark as Georgian content
-                                    "country": "Georgia"
+                                    "country": "Georgia",
                                 }
                                 jobs.append(job)
                                 job_count += 1
-                                
+
                         except Exception as e:
                             print(f"Error parsing jobs.ge table row: {e}")
                             continue
-                            
+
                 if job_count >= limit:
                     break
-                    
+
         except Exception as e:
             print(f"Error scraping jobs.ge: {e}")
-            
+
         print(f"jobs.ge: Found {len(jobs)} jobs")
         return jobs
 
@@ -358,43 +384,47 @@ class JobScraper:
         details = {}
         try:
             response = self.session.get(job_url)
-            response.encoding = 'utf-8'
+            response.encoding = "utf-8"
             soup = BeautifulSoup(response.content, "html.parser")
-            
+
             description_selectors = [
                 "div.job-description",
-                "div.vacancy-description", 
+                "div.vacancy-description",
                 "section.description",
                 "div.content",
                 ".job-details",
-                ".vacancy-details"
+                ".vacancy-details",
             ]
-            
+
             description = ""
             for selector in description_selectors:
                 desc_elem = soup.select_one(selector)
                 if desc_elem:
                     description = desc_elem.get_text(strip=True)
                     break
-            
+
             salary_elem = soup.select_one(".salary, .salary-info, .compensation")
-            requirements_elem = soup.select_one(".requirements, .skills, .qualifications")
+            requirements_elem = soup.select_one(
+                ".requirements, .skills, .qualifications"
+            )
             benefits_elem = soup.select_one(".benefits, .perks, .advantages")
-            
+
             details = {
                 "full_description": description,
-                "salary_details": salary_elem.get_text(strip=True) if salary_elem else "",
-                "requirements": requirements_elem.get_text(strip=True) if requirements_elem else "",
+                "salary_details": (
+                    salary_elem.get_text(strip=True) if salary_elem else ""
+                ),
+                "requirements": (
+                    requirements_elem.get_text(strip=True) if requirements_elem else ""
+                ),
                 "benefits": benefits_elem.get_text(strip=True) if benefits_elem else "",
-                "language": "georgian"
+                "language": "georgian",
             }
-            
+
         except Exception as e:
             print(f"Error getting detailed job info: {e}")
-            
+
         return details
-
-
 
     def scrape_all_sources(
         self, keywords, location: str = "", limit_per_source: int = 10
@@ -414,11 +444,15 @@ class JobScraper:
         all_jobs.extend(self.scrape_indeed_jobs(keywords, location, limit_per_source))
 
         print("📊 Scraping Glassdoor...")
-        all_jobs.extend(self.scrape_glassdoor_jobs(keywords, location, limit_per_source))
+        all_jobs.extend(
+            self.scrape_glassdoor_jobs(keywords, location, limit_per_source)
+        )
 
-        if "georgia" in keywords_str.lower() or any(city in keywords_str.lower() for city in ["tbilisi", "batumi", "kutaisi"]):
+        if "georgia" in keywords_str.lower() or any(
+            city in keywords_str.lower() for city in ["tbilisi", "batumi", "kutaisi"]
+        ):
             print("🇬🇪 Prioritizing Georgian job sites...")
-            
+
         print("🇬🇪 Scraping hr.ge...")
         all_jobs.extend(self.scrape_hr_ge_jobs(keywords, limit_per_source))
 

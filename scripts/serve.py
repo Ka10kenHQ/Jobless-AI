@@ -12,13 +12,21 @@ from inference.server import run_server
 def main():
     parser = argparse.ArgumentParser(description="Serve job search model")
     parser.add_argument("--trained-model", type=str, default=None,
-                       help="Path to trained model (optional, uses base model if not provided)")
+                       help="Path to trained model (optional, auto-detects if not provided)")
     parser.add_argument("--port", type=int, default=8000,
                        help="Port to serve on (default: 8000)")
     parser.add_argument("--host", type=str, default="0.0.0.0",
                        help="Host to serve on (default: 0.0.0.0)")
+    parser.add_argument("--force-base", action="store_true",
+                       help="Force use of base model even if trained model exists")
     
     args = parser.parse_args()
+    
+    if args.trained_model is None and not args.force_base:
+        default_model_path = "./models/job_search_model"
+        if os.path.exists(default_model_path) and os.path.exists(os.path.join(default_model_path, "adapter_config.json")):
+            args.trained_model = default_model_path
+            print(f"🎯 Auto-detected trained model at: {default_model_path}")
     
     model_type = "🎯 Trained Model" if args.trained_model else "📱 Base Model"
     print(f"🚀 Starting MCP Job Search Server ({model_type})...")
