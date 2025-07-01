@@ -13,8 +13,13 @@ An intelligent job search system using MCP (Model Context Protocol) with AI-powe
 - **🎯 RTX 4050 Optimized**: Specifically tuned for 6GB VRAM GPUs
 - **🔒 Security Compliant**: PyTorch 2.6+ addressing CVE-2025-32434
 
+## Chatbox
 
 ![](./assets/joblessAI.png)
+
+## Database Monitoring
+
+![](./assets/mongo_monitoring.png)
 
 ## 🚀 Quick Start
 
