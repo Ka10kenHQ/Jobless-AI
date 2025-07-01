@@ -13,6 +13,9 @@ An intelligent job search system using MCP (Model Context Protocol) with AI-powe
 - **🎯 RTX 4050 Optimized**: Specifically tuned for 6GB VRAM GPUs
 - **🔒 Security Compliant**: PyTorch 2.6+ addressing CVE-2025-32434
 
+
+![](./assets/joblessAI.png)
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -402,4 +405,4 @@ MIT License - see LICENSE file for details.
 
 ---
 
-**🎯 Ready to find your dream job with AI! Start with `make install` and explore the monitoring dashboards.** 
+**🎯 Ready to find your dream job with AI! Start with `make install` and explore the monitoring dashboards.**
